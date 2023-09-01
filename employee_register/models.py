@@ -8,9 +8,11 @@ class Position(models.Model):
 
 class Employee(models.Model):
     firstname = models.CharField(max_length=100)
-    mobile = models.CharField(max_length=15)
+    mobile = models.CharField(max_length=10)
     emp_code = models.CharField(max_length=3)
     position = models.ForeignKey(Position,on_delete=models.CASCADE)
     
 
-   
+    def __str__(self):
+          return self.firstname
+     
